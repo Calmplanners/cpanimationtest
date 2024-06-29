@@ -1,0 +1,28 @@
+// swift-tools-version:5.3
+import PackageDescription
+
+let package = Package(
+    name: "cptest",
+    platforms: [
+        .iOS(.v13),
+        .macOS(.v10_15)
+    ],
+    products: [
+        .library(
+            name: "cptest",
+            targets: ["cptest"]),
+    ],
+    dependencies: [],
+    targets: [
+        .target(
+            name: "cptest",
+            dependencies: [],
+            resources: [
+                .process("animation.gif")
+            ]
+        ),
+        .testTarget(
+            name: "cptestTests",
+            dependencies: ["cptest"]),
+    ]
+)
